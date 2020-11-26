@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <div *ngIf="!registerMode" style='text-align: center;'>
+        <h1>The last dating app you'll ever use</h1>
+        <p class="lead">Sign up now! </p> 
+        <p>I bid you good day chap fancied a flutter brilliant off t'shop.</p>
+        <div class="text-center">
+            <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
+            <button class="btn btn-info btn-lg">Learn more</button>
+        </div>
+    </div>
+
+    <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+        </div>
+    </div>
+</div>
