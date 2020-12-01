@@ -1,0 +1,35 @@
+<div class="container mt-5" style='text-align: center;'>
+    <h4>
+    Internal server error
+</h4>
+<p> Please refresh your browser or click the return button
+    to navigate home.</p>
+<button class="button btn-info btn-md" (click)="redirectHome()">Return</button>
+<p class="font-weight-bold mt-3">
+    If you'd like to assist our team by providing us with details of this issue,
+    please click the view error button below.
+</p>
+<button class="btn-info btn-md" (click)="getDevException()">
+    See exception
+</button>
+</div>
+<ng-container *ngIf="devException">
+    <div class="text-danger mt-3" style='text-align: center;'>
+    <h5>Error: {{ error.message }}</h5>
+    <p>
+        Following is the stack trace - please provide a screen shot of this to our
+        helpdesk team
+    </p>
+    </div>
+    <code class="mt-5" syle="background-color: white-grey;">{{
+    error.details
+  }}</code>
+  <h3 class="mt-5">What to do next?</h3>
+  <ol>
+      <li>Open the browser developer tools</li>
+      <li>Inspect the network tab</li>
+      <li>Check the failing request</li>
+      <li>Examine the request URL - make sure it is correct</li>
+      <li>Reproduce the error in Postman - if we see the same response, then the issue isn't with the client.</li>
+  </ol>
+</ng-container>
